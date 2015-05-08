@@ -55,6 +55,11 @@
                 android:adjustViewBounds="true"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent" />
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"/>
         </RelativeLayout>
         <Space
             android:layout_weight="0.3"

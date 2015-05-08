@@ -3,4 +3,5 @@
     <string name="app_name">sunr.in</string>
     <string name="sign_in">회원가입</string>
     <string name="str_done">확인</string>
+    <string name="facebook_app_id">1077115215649651</string>
 </resources>
