@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--Contents-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:padding="16dp"
+        android:layout_height="match_parent">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/triple_height_toolbar" />
+        <TextView
+            android:layout_weight="0.8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:gravity="center_vertical"
+            android:text="페이스북 로그인"
+            android:textColor="@color/primary"
+            android:textSize="25sp"/>
+        <Space
+            android:layout_weight="0.2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <RelativeLayout
+            android:id="@+id/signin_lay_fb"
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_solid_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+            <TextView
+                android:id="@+id/signin_tv_fbstatus"
+                android:textColor="#fff"
+                android:paddingLeft="8dp"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:text="로그인 : 이름이름"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/signin_img_done"
+                android:padding="3dp"
+                android:layout_marginRight="2dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_done_white"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+        </RelativeLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <TextView
+            android:layout_weight="0.8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:gravity="center_vertical"
+            android:text="기초정보 입력"
+            android:textColor="@color/primary"
+            android:textSize="25sp"/>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_weight="2.3"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--Floating Action Bar-->
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/signin_fab_ok"
+        fab:fab_icon="@drawable/ic_done"
+        fab:fab_title="@string/str_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="#F9F9F9"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="6dp"
+        fab:fab_colorPressed="#e1e1e1"/>
+</RelativeLayout>
