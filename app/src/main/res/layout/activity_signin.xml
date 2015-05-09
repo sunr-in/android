@@ -43,10 +43,10 @@
                 android:paddingLeft="8dp"
                 android:textSize="16sp"
                 android:gravity="center_vertical"
-                android:text="로그인 : 이름이름"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/signin_img_done"
                 android:padding="3dp"
                 android:layout_marginRight="2dp"
@@ -57,6 +57,8 @@
                 android:layout_height="fill_parent" />
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/login_button"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"/>
