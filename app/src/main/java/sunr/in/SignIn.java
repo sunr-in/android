@@ -2,6 +2,7 @@ package sunr.in;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,8 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
@@ -24,6 +29,8 @@ import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import sunr.in.widget.MultiSelectSpinner;
+
 /**
  * Created by LNTCS on 2015-05-07.
  * Project-Juilliard
@@ -31,11 +38,14 @@ import com.facebook.login.widget.LoginButton;
 public class SignIn extends AppCompatActivity implements View.OnClickListener{
     RelativeLayout fbLay;
     LoginButton loginButton;
-    ImageView doneImg;
-    TextView statusTv;
+    ImageView doneImg,indicateImg;
+    TextView statusTv,graduTv,undergraduTv;
     CallbackManager callbackManager;
     Context mContext;
     ProfileTracker profileTracker;
+    Spinner majorSpn;
+    MultiSelectSpinner branchSpn;
+    boolean isGraduate = true;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,37 +92,70 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
             case R.id.signin_lay_fb:
                 loginButton.performClick();
                 break;
+            case R.id.signin_tv_graduate:
+                if(isGraduate) {
+                    Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.move_right);
+                    indicateImg.startAnimation(animation);
+                    graduTv.setTextColor(Color.WHITE);
+                    undergraduTv.setTextColor(getResources().getColor(R.color.primary));
+                    isGraduate = false;
+                }
+                break;
+            case R.id.signin_tv_undergraduate:
+                if(!isGraduate) {
+                    Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.move_left);
+                    indicateImg.startAnimation(animation);
+                    undergraduTv.setTextColor(Color.WHITE);
+                    graduTv.setTextColor(getResources().getColor(R.color.primary));
+                    isGraduate = true;
+                }
+                break;
         }
     }
     public void initLayout(){
         fbLay = (RelativeLayout) findViewById(R.id.signin_lay_fb);
         doneImg = (ImageView) findViewById(R.id.signin_img_done);
+        indicateImg = (ImageView) findViewById(R.id.signin_img_indicator);
         statusTv = (TextView) findViewById(R.id.signin_tv_fbstatus);
-        loginButton= (LoginButton) findViewById(R.id.login_button);
+        graduTv = (TextView) findViewById(R.id.signin_tv_graduate);
+        undergraduTv = (TextView) findViewById(R.id.signin_tv_undergraduate);
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        majorSpn = (Spinner) findViewById(R.id.signin_spn_major);
+        branchSpn = (MultiSelectSpinner) findViewById(R.id.signin_spn_branch);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                .createFromResource(this, R.array.major_array,R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_item);
+
+        majorSpn.setAdapter(adapter);
+        branchSpn.setItems(getResources().getStringArray(R.array.branch_array));
+        //TODO 스피너들 초기 값 설정
 
         loginButton.setReadPermissions("user_friends");
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                // App code
                 Log.i("Facebook Callback", "Success");
                 updateUI();
             }
+
             @Override
             public void onCancel() {
-                // App code
                 Log.i("Facebook Callback", "Cancel");
                 updateUI();
             }
+
             @Override
             public void onError(FacebookException exception) {
-                // App code
                 Log.i("Facebook Callback", "Error");
                 updateUI();
             }
         });
         ((GradientDrawable)fbLay.getBackground()).setColor(getResources().getColor(R.color.facebook));
+        ((GradientDrawable)indicateImg.getBackground()).setColor(getResources().getColor(R.color.primary));
         fbLay.setOnClickListener(this);
+        graduTv.setOnClickListener(this);
+        undergraduTv.setOnClickListener(this);
     }
 
     public void updateUI(){
@@ -120,10 +163,10 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         Profile profile = Profile.getCurrentProfile();
         if (enableButtons && profile != null) {
             doneImg.setVisibility(View.VISIBLE);
-            statusTv.setText("로그인 완료 : " + profile.getName());
+            statusTv.setText(getString(R.string.login_success)+" : " + profile.getName());
         }else{
             doneImg.setVisibility(View.GONE);
-            statusTv.setText("facebook 로그인을 해주세요");
+            statusTv.setText(getString(R.string.plz_login));
         }
     }
 }

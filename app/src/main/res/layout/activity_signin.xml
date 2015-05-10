@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:gravity="center_vertical"
-            android:text="페이스북 로그인"
+            android:text="@string/fb_login"
             android:textColor="@color/primary"
             android:textSize="25sp"/>
         <Space
@@ -79,12 +79,64 @@
             android:layout_weight="0.3"
             android:layout_width="match_parent"
             android:layout_height="1dp" />
-        <LinearLayout
+        <FrameLayout
             android:layout_weight="0.7"
             android:background="@drawable/shp_stroke_rounded"
             android:layout_width="match_parent"
+            android:padding="5dp"
             android:layout_height="1dp">
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/signin_img_indicator"
+                    android:layout_weight="1"
+                    android:layout_width="1dp"
+                    android:background="@drawable/shp_solid_rounded"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/signin_tv_undergraduate"
+                    android:layout_width="1dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:text="@string/undergraduate"
+                    android:textSize="16sp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/signin_tv_graduate"
+                    android:layout_width="1dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/primary"
+                    android:text="@string/graduate"
+                    android:textSize="16sp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </FrameLayout>
+        <Space
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <RelativeLayout
+            android:layout_weight="0.7"
+            android:background="@drawable/shp_stroke_rounded"
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="1dp">
+            <Spinner
+                android:id="@+id/signin_spn_major"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
         <Space
             android:layout_weight="0.3"
             android:layout_width="match_parent"
@@ -99,22 +151,17 @@
             android:layout_weight="0.3"
             android:layout_width="match_parent"
             android:layout_height="1dp" />
-        <LinearLayout
+        <RelativeLayout
             android:layout_weight="0.7"
+            android:padding="4dp"
             android:background="@drawable/shp_stroke_rounded"
             android:layout_width="match_parent"
             android:layout_height="1dp">
-        </LinearLayout>
-        <Space
-            android:layout_weight="0.3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-        <LinearLayout
-            android:layout_weight="0.7"
-            android:background="@drawable/shp_stroke_rounded"
-            android:layout_width="match_parent"
-            android:layout_height="1dp">
-        </LinearLayout>
+            <sunr.in.widget.MultiSelectSpinner
+                android:id="@+id/signin_spn_branch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
         <Space
             android:layout_weight="0.3"
             android:layout_width="match_parent"

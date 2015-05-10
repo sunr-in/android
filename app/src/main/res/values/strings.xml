@@ -4,4 +4,25 @@
     <string name="sign_in">회원가입</string>
     <string name="str_done">확인</string>
     <string name="facebook_app_id">1077115215649651</string>
+    <string name="fb_login">페이스북 로그인</string>
+    <string name="login_success">로그인 완료</string>
+    <string name="plz_login">facebook 로그인을 해주세요</string>
+    <string name="graduate">졸업생</string>
+    <string name="undergraduate">재학생</string>
+    <string-array name="major_array">
+        <item>정보통신과</item>
+        <item>웹운영과</item>
+        <item>테크노경영과</item>
+        <item>멀티미디어과</item>
+    </string-array>
+    <string-array name="branch_array">
+        <item>금융</item>
+        <item>정치</item>
+        <item>개발</item>
+        <item>영상디자인</item>
+        <item>건설</item>
+        <item>잉여</item>
+        <item>직업</item>
+    </string-array>
+
 </resources>
