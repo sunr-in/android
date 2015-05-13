@@ -20,10 +20,14 @@ android {
 }
 repositories {
     mavenCentral()
+    maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.afollestad:material-dialogs:0.7.3.4'
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.facebook.android:facebook-android-sdk:4.1.1'
+    compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.1'
+    compile 'com.android.support:cardview-v7:21.+'
     compile 'com.getbase:floatingactionbutton:1.9.0'
 }

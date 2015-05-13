@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">sunr.in</string>
+    <string name="app_name">Sunr.in</string>
     <string name="sign_in">회원가입</string>
     <string name="str_done">확인</string>
     <string name="facebook_app_id">1077115215649651</string>
@@ -9,6 +9,10 @@
     <string name="plz_login">facebook 로그인을 해주세요</string>
     <string name="graduate">졸업생</string>
     <string name="undergraduate">재학생</string>
+    <string name="soge">한줄 소개를 입력해주세요...</string>
+
+    <string name="major_prompt">학과 선택...</string>
+    <string name="branch_prompt">직업 분야 선택...</string>
     <string-array name="major_array">
         <item>정보통신과</item>
         <item>웹운영과</item>
@@ -24,5 +28,12 @@
         <item>잉여</item>
         <item>직업</item>
     </string-array>
-
+    <string-array name="title_array">
+        <item>포트폴리오</item>
+        <item>연결고리</item>
+        <item>컨퍼런스</item>
+        <item>매거진</item>
+        <item>자료실</item>
+        <item>페이스북</item>
+    </string-array>
 </resources>

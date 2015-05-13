@@ -28,31 +28,32 @@ public class MultiSelectSpinner extends Spinner implements OnMultiChoiceClickLis
     public MultiSelectSpinner(Context context) {
         super(context);
         _proxyAdapter = new ArrayAdapter<String>(context, R.layout.spinner_item);
+        _proxyAdapter.add(getResources().getString(R.string.branch_prompt));
         super.setAdapter(_proxyAdapter);
     }
     public MultiSelectSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         _proxyAdapter = new ArrayAdapter<String>(context, R.layout.spinner_item);
+        _proxyAdapter.add(getResources().getString(R.string.branch_prompt));
         super.setAdapter(_proxyAdapter);
     }
     @Override
     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
         if (_selection != null && which < _selection.length) {
             _selection[which] = isChecked;
-
             _proxyAdapter.clear();
             _proxyAdapter.add(buildSelectedItemString());
             setSelection(0);
-        }
-        else {
+        }else {
             throw new IllegalArgumentException("Argument 'which' is out of bounds.");
         }
+
     }
     @Override
     public boolean performClick() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(),R.style.AppTheme_Signin_Dialog);
         builder.setMultiChoiceItems(_items, _selection, this);
+        builder.setCancelable(true);
         builder.show();
         return true;
     }
@@ -122,7 +123,6 @@ public class MultiSelectSpinner extends Spinner implements OnMultiChoiceClickLis
     private String buildSelectedItemString() {
         StringBuilder sb = new StringBuilder();
         boolean foundOne = false;
-
         for (int i = 0; i < _items.length; ++i) {
             if (_selection[i]) {
                 if (foundOne) {
@@ -131,6 +131,9 @@ public class MultiSelectSpinner extends Spinner implements OnMultiChoiceClickLis
                 foundOne = true;
                 sb.append(_items[i]);
             }
+        }
+        if(sb.toString().equals("")){
+            return getResources().getString(R.string.branch_prompt);
         }
         return sb.toString();
     }

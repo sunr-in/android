@@ -25,7 +25,7 @@
             android:layout_height="1dp"
             android:gravity="center_vertical"
             android:text="@string/fb_login"
-            android:textColor="@color/primary"
+            android:textColor="@color/primary_sign"
             android:textSize="25sp"/>
         <Space
             android:layout_weight="0.2"
@@ -73,7 +73,7 @@
             android:layout_height="1dp"
             android:gravity="center_vertical"
             android:text="기초정보 입력"
-            android:textColor="@color/primary"
+            android:textColor="@color/primary_sign"
             android:textSize="25sp"/>
         <Space
             android:layout_weight="0.3"
@@ -116,7 +116,7 @@
                     android:layout_width="1dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/primary"
+                    android:textColor="@color/primary_sign"
                     android:text="@string/graduate"
                     android:textSize="16sp"
                     android:layout_height="match_parent" />
@@ -133,6 +133,7 @@
             android:padding="4dp"
             android:layout_height="1dp">
             <Spinner
+                style="@style/Spinner"
                 android:id="@+id/signin_spn_major"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -157,7 +158,11 @@
             android:background="@drawable/shp_stroke_rounded"
             android:layout_width="match_parent"
             android:layout_height="1dp">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
             <sunr.in.widget.MultiSelectSpinner
+                android:background="@color/trans"
                 android:id="@+id/signin_spn_branch"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -170,10 +175,17 @@
             android:layout_weight="2.3"
             android:background="@drawable/shp_stroke_rounded"
             android:layout_width="match_parent"
+            android:padding="8dp"
             android:layout_height="1dp">
+            <EditText
+                android:gravity="start"
+                android:textSize="12sp"
+                android:hint="@string/soge"
+                android:textColorHint="@color/primary_sign"
+                android:background="@color/trans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
-
-
     </LinearLayout>
     <!--Floating Action Bar-->
     <com.getbase.floatingactionbutton.FloatingActionButton

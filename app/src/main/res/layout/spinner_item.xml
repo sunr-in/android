@@ -5,6 +5,6 @@
     android:layout_height="48dp"
     android:gravity="left|center_vertical"
     style="?android:attr/spinnerDropDownItemStyle"
-    android:textColor="@color/primary"
+    android:textColor="@color/primary_sign"
     android:textSize="14sp"
     android:ellipsize="marquee"/>

@@ -97,7 +97,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                     Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.move_right);
                     indicateImg.startAnimation(animation);
                     graduTv.setTextColor(Color.WHITE);
-                    undergraduTv.setTextColor(getResources().getColor(R.color.primary));
+                    undergraduTv.setTextColor(getResources().getColor(R.color.primary_sign));
                     isGraduate = false;
                 }
                 break;
@@ -106,7 +106,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                     Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.move_left);
                     indicateImg.startAnimation(animation);
                     undergraduTv.setTextColor(Color.WHITE);
-                    graduTv.setTextColor(getResources().getColor(R.color.primary));
+                    graduTv.setTextColor(getResources().getColor(R.color.primary_sign));
                     isGraduate = true;
                 }
                 break;
@@ -126,7 +126,6 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         ArrayAdapter<CharSequence> adapter = ArrayAdapter
                 .createFromResource(this, R.array.major_array,R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.spinner_item);
-
         majorSpn.setAdapter(adapter);
         branchSpn.setItems(getResources().getStringArray(R.array.branch_array));
         //TODO 스피너들 초기 값 설정
@@ -152,7 +151,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
             }
         });
         ((GradientDrawable)fbLay.getBackground()).setColor(getResources().getColor(R.color.facebook));
-        ((GradientDrawable)indicateImg.getBackground()).setColor(getResources().getColor(R.color.primary));
+        ((GradientDrawable)indicateImg.getBackground()).setColor(getResources().getColor(R.color.primary_sign));
         fbLay.setOnClickListener(this);
         graduTv.setOnClickListener(this);
         undergraduTv.setOnClickListener(this);

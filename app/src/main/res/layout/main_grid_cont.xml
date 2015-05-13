@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="8dp"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:weightSum="2"
+    android:layout_height="240dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        cardview:cardElevation="2dp"
+        android:padding="-4dp"
+        cardview:cardCornerRadius="2dp"
+        cardview:cardPreventCornerOverlap="false"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/main_grid_lay"
+            android:background="@drawable/shp_solid_grid_rounded"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_weight="7"
+                android:padding="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+                <ImageView
+                    android:id="@+id/main_grid_cont_img"
+                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/main_grid_cont_bottom"
+                android:background="@drawable/shp_solid_rounded_overlay"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+                <TextView
+                    android:text="Title"
+                    android:textStyle="bold"
+                    android:id="@+id/main_grid_cont_title"
+                    android:textSize="@dimen/main_grid_cont_title_size"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

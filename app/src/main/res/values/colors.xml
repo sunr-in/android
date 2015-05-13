@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#E53935</color>
-    <color name="primary_dark">#B71C1C</color>
-    <color name="accent">#FF5252</color>
+    <color name="primary_sign">#E53935</color>
+    <color name="primary_dark_sign">#B71C1C</color>
+    <color name="accent_sign">#FF5252</color>
+    <color name="primary_dark_main">#1e292e</color>
     <color name="facebook">#415dae</color>
     <color name="background">#fefefe</color>
-
+    <color name="trans">#00000000</color>
+    <color name="divider">#bbb</color>
+    <color name="selector">#ddd</color>
+    <color name="bg_light">#f5f5f5</color>
+    <color name="sidebar_bg">#212121</color>
+    <color name="dimm">#96000000</color>
+    <array name="grid_bg">
+        <item>#32ac6f</item>
+        <item>#f54e3c</item>
+        <item>#ffa624</item>
+        <item>#5f7a85</item>
+        <item>#01bbd4</item>
+        <item>@color/bg_light</item>
+    </array>
+    <array name="grid_color">
+        <item>#0a924a</item>
+        <item>#d9333d</item>
+        <item>#fb7f0f</item>
+        <item>#546e7a</item>
+        <item>#0294bd</item>
+        <item>#999999</item>
+    </array>
 </resources>
