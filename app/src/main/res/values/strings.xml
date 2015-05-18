@@ -10,6 +10,7 @@
     <string name="graduate">졸업생</string>
     <string name="undergraduate">재학생</string>
     <string name="soge">한줄 소개를 입력해주세요...</string>
+    <string name="grade">학번 선택...</string>
 
     <string name="major_prompt">학과 선택...</string>
     <string name="branch_prompt">직업 분야 선택...</string>

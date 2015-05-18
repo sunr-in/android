@@ -11,6 +11,11 @@
         android:layout_height="wrap_content"/>
     <!--Contents-->
     <LinearLayout
+        android:layout_marginTop="@dimen/triple_height_toolbar"
+        android:background="@color/accent_sign"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:weightSum="10"
@@ -142,12 +147,24 @@
             android:layout_weight="0.3"
             android:layout_width="match_parent"
             android:layout_height="1dp" />
-        <LinearLayout
+        <RelativeLayout
             android:layout_weight="0.7"
+            android:padding="4dp"
             android:background="@drawable/shp_stroke_rounded"
             android:layout_width="match_parent"
             android:layout_height="1dp">
-        </LinearLayout>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/signin_hakbun"
+                android:paddingLeft="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/primary_sign"
+                android:text="@string/grade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
         <Space
             android:layout_weight="0.3"
             android:layout_width="match_parent"

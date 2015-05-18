@@ -7,6 +7,6 @@
     android:layout_width="match_parent"
     android:minHeight="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    app:titleTextAppearance="@style/Toolbar.TitleText.Sign"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:titleTextAppearance="@style/Toolbar.TitleText"
+    app:theme="@style/ThemeOverlay.AppCompat.Light"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />

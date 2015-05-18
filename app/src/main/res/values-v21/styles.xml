@@ -1,0 +1,10 @@
+<resources>
+    <style name="AppTheme.Signin.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorControlNormal">@color/primary_sign</item>
+        <item name="colorControlActivated">@color/primary_sign</item>
+        <item name="colorControlHighlight">@color/accent_sign</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorMultiSelectHighlight">@color/accent_sign</item>
+        <item name="colorAccent">@color/accent_sign</item>
+    </style>
+</resources>
